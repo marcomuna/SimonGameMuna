@@ -72,7 +72,7 @@ function check(idx) {
     }
   } else {
     document.querySelector("h3").innerHTML =
-      `Game over ! Score = ${level - 1} </br>Press any key to start the Game.`;
+      `Game over ! Score = ${level - 1} </br>Press any key or touch the screen to start the Game.`;
     document.querySelector("body").classList.add("gameOver");
     setTimeout(() => {
       document.querySelector("body").classList.remove("gameOver");
