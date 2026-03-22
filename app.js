@@ -5,12 +5,14 @@ let color = ["red", "green", "yellow", "blue"];
 let started = false;
 let level = 0;
 
-document.addEventListener("keypress", () => {
+document.addEventListener("touchstart", startHandler);
+document.addEventListener("keypress", startHandler);
+function startHandler() {
   if (!started) {
     started = true;
     startGame();
   }
-});
+}
 
 function startGame() {
   console.log("Game started");
@@ -37,7 +39,7 @@ function btnPressedHandeler() {
   usrSeq.push(id);
   console.log(usrSeq);
 
-  flashBtn(btn,id);
+  flashBtn(btn, id);
   check(usrSeq.length - 1);
 }
 function gamePressed() {
@@ -51,10 +53,10 @@ function gamePressed() {
   let randBtn = document.querySelector(`.${randColor}`);
   flashBtn(randBtn);
   console.log(gameSeq);
-  new Audio("/sounds/" +randColor+ ".mp3").play();
+  new Audio("/sounds/" + randColor + ".mp3").play();
 }
 
-function flashBtn(btn,id) {
+function flashBtn(btn, id) {
   btn.classList.add("flashBtn");
   setTimeout(() => {
     btn.classList.remove("flashBtn");
@@ -87,7 +89,6 @@ function reset() {
   usrSeq = [];
   level = 0;
 }
-
 
 // document.querySelector(".reset").addEventListener("click",()=>{
 //   reset();
