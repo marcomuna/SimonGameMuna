@@ -5,6 +5,7 @@ let color = ["red", "green", "yellow", "blue"];
 let started = false;
 let level = 0;
 
+
 document.addEventListener("touchstart", startHandler);
 document.addEventListener("keypress", startHandler);
 function startHandler() {
@@ -88,14 +89,13 @@ function reset() {
   gameSeq = [];
   usrSeq = [];
   level = 0;
+
 }
 
-// document.querySelector(".reset").addEventListener("click",()=>{
-//   reset();
-//   document.querySelector("h3").innerHTML =
-//       `Press any key to start the Game.`;
-//     document.querySelector("body").classList.add("gameOver");
-//     setTimeout(() => {
-//       document.querySelector("body").classList.remove("gameOver");
-//     }, 200);
-// })
+
+
+function restartGame() {
+  reset();        // clear everything
+  started = true; // allow game to start immediately
+  startGame();    // start again
+}
