@@ -99,3 +99,13 @@ function restartGame() {
   started = true; // allow game to start immediately
   startGame();    // start again
 }
+
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker
+    .register("/service-worker.js")
+    .then(()=> console.log("Service Worker Registered"))
+    .catch((e)=> console.log("Sw Error : ",e));
+  });
+}
