@@ -1,4 +1,4 @@
-const CACHE_NAME = "dictionary-app-v1";
+const CACHE_NAME = "simonsay-game-v1";
 
 const ASSETS = [
   "/",
@@ -7,7 +7,13 @@ const ASSETS = [
   "/script.js",
   "/manifest.json",
   "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "/icons/icon-512.png",
+  "/icons/favicon.ico",
+  "/sounds/blue.mp3",
+  "/sounds/green.mp3",
+  "/sounds/red.mp3",
+  "/sounds/yellow.mp3",
+  "/sounds/wrong.mp3",
 ];
 
 // Install → cache files

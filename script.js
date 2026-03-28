@@ -6,7 +6,7 @@ let started = false;
 let level = 0;
 
 
-document.addEventListener("touchstart", startHandler);
+document.addEventListener("touchstart",startHandler);
 document.addEventListener("keypress", startHandler);
 function startHandler() {
   if (!started) {
@@ -16,6 +16,7 @@ function startHandler() {
 }
 
 function startGame() {
+  navigator.vibrate(50);
   console.log("Game started");
   level = 0;
   gameSeq = [];
@@ -35,6 +36,7 @@ userPressed();
 function btnPressedHandeler() {
   if (!started) return;
 
+  navigator.vibrate(50);
   let btn = this;
   let id = btn.getAttribute("id");
   usrSeq.push(id);
@@ -46,6 +48,7 @@ function btnPressedHandeler() {
 function gamePressed() {
   usrSeq = [];
   level++;
+  navigator.vibrate(100);
   document.querySelector("h3").innerText = `Level ${level}`;
   let random = Math.floor(Math.random() * 4);
   let randColor = color[random];
@@ -83,6 +86,7 @@ function check(idx) {
 }
 
 function reset() {
+  navigator.vibrate([300,100,300]);
   console.log("game is over");
   new Audio("/sounds/wrong.mp3").play();
   started = false;
@@ -95,6 +99,7 @@ function reset() {
 
 
 function restartGame() {
+  navigator.vibrate(50)
   reset();        // clear everything
   started = true; // allow game to start immediately
   startGame();    // start again
